@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,8 +7,23 @@ using System.Threading.Tasks;
 namespace ProblemThree_CompleteSolution_BL
 {
     public abstract class GourmetShop
-    {          
+    {
+        public int ItemCode { get; set; }
+        public String ItemName { get; set; }
+        public Dictionary<int,double> ItemPrice { get; set; }
+
+        public GourmetShop()
+        {
+
+        }
+        public GourmetShop(int iCode,String iName, Dictionary<int, double> iPrice)
+        {
+            ItemCode = iCode;
+            ItemName = iName;
+            ItemPrice = iPrice;
+        }
         public abstract double PayPerPiece(int quantity);
+        
         public abstract double PayPerWeight(int weight);
 
     }
